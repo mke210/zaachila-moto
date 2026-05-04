@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaachila Moto - Mototaxis a Domicilio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%236C5CE7'/><text x='50' y='65' text-anchor='middle' font-size='45'>🛺</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        :root{--bg:#0a0a0f;--bg2:#13111a;--card:#1a1722;--acc:#6C5CE7;--green:#00C897;--red:#FF4757;--warn:#FFA502;--txt:#fff;--txt2:#aaa;--txt3:#666;--bd:#252130;--r:16px;--r2:24px}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter','Segoe UI',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+        header{background:var(--bg2);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100}
+        header .logo{display:flex;align-items:center;gap:.6rem;font-size:1.3rem;font-weight:800}
+        header .logo span{color:var(--acc)}
+        header nav a{color:var(--txt2);text-decoration:none;margin-left:1.5rem;font-size:.85rem;transition:.2s}
+        header nav a:hover{color:var(--txt)}
+        .hero{text-align:center;padding:5rem 2rem 3rem;background:linear-gradient(135deg,var(--bg2),var(--card))}
+        .hero h1{font-size:2.8rem;font-weight:800;margin-bottom:1rem}
+        .hero h1 span{color:var(--acc)}
+        .hero p{font-size:1.15rem;color:var(--txt2);max-width:600px;margin:0 auto 2rem}
+        .hero .emoji{font-size:5rem;display:block;margin-bottom:1rem}
+        .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .btn-hero{background:var(--acc);color:#fff;padding:.8rem 1.8rem;border-radius:var(--r);text-decoration:none;font-weight:700;font-size:.95rem;transition:.2s;display:flex;align-items:center;gap:.5rem}
+        .btn-hero:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(108,92,231,.3)}
+        .btn-hero.outline{background:transparent;border:2px solid var(--acc)}
+        section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+        section h2{font-size:2rem;font-weight:800;text-align:center;margin-bottom:1rem}
+        section h2 span{color:var(--acc)}
+        section .subtitle{text-align:center;color:var(--txt2);margin-bottom:3rem;font-size:.95rem}
+        .problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+        .problem-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r2);padding:2rem;text-align:center;transition:.3s}
+        .problem-card:hover{transform:translateY(-5px);border-color:var(--acc)}
+        .problem-card .icon{font-size:2.5rem;margin-bottom:1rem}
+        .problem-card h3{font-size:1.1rem;margin-bottom:.5rem;color:var(--warn)}
+        .problem-card p{font-size:.85rem;color:var(--txt2)}
+        .solution-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+        .solution-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r2);padding:2rem;transition:.3s}
+        .solution-card:hover{border-color:var(--green)}
+        .solution-card .icon{font-size:2.5rem;margin-bottom:1rem}
+        .solution-card h3{font-size:1.1rem;margin-bottom:.5rem}
+        .solution-card p{font-size:.85rem;color:var(--txt2)}
+        .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+        .benefit-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r2);padding:1.5rem;text-align:center;transition:.3s}
+        .benefit-card:hover{border-color:var(--acc)}
+        .benefit-card .icon{font-size:2rem;margin-bottom:.8rem}
+        .benefit-card h3{font-size:1rem;margin-bottom:.4rem}
+        .benefit-card p{font-size:.8rem;color:var(--txt2)}
+        .download-section{background:var(--bg2);text-align:center;padding:3rem 2rem}
+        .download-section h2{margin-bottom:2rem}
+        .download-grid{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+        .download-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r2);padding:2rem;text-align:center;width:280px;transition:.3s}
+        .download-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(108,92,231,.2)}
+        .download-card .icon{font-size:3rem;margin-bottom:1rem}
+        .download-card h3{font-size:1.2rem;margin-bottom:.5rem}
+        .download-card p{font-size:.8rem;color:var(--txt2);margin-bottom:1.5rem}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+        .testimonial-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r2);padding:1.5rem;transition:.3s}
+        .testimonial-card:hover{border-color:var(--warn)}
+        .testimonial-card .stars{color:var(--warn);margin-bottom:.5rem}
+        .testimonial-card p{font-size:.85rem;font-style:italic;margin-bottom:1rem;color:var(--txt2)}
+        .testimonial-card .author{font-weight:700;font-size:.85rem}
+        .testimonial-card .role{font-size:.7rem;color:var(--txt3)}
+        .contact-section{text-align:center;padding:3rem 2rem}
+        .contact-section .contact-info{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+        .contact-item{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem 2rem;text-align:center;transition:.3s}
+        .contact-item:hover{border-color:var(--acc)}
+        .contact-item i{font-size:1.5rem;color:var(--acc);margin-bottom:.5rem}
+        .contact-item h4{font-size:.9rem;margin-bottom:.3rem}
+        .contact-item p{font-size:.85rem;color:var(--txt2)}
+        .contact-item a{color:var(--acc);text-decoration:none}
+        footer{background:var(--bg2);text-align:center;padding:2rem;border-top:1px solid var(--bd);font-size:.8rem;color:var(--txt3)}
+        @media(max-width:768px){header{flex-direction:column;gap:1rem}header nav a{margin-left:.8rem;font-size:.75rem}.hero h1{font-size:2rem}section{padding:2.5rem 1rem}}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🛺 Zaachila <span>Moto</span></div>
+    <nav>
+        <a href="#problema">Problemática</a>
+        <a href="#solucion">Solución</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#descargas">Descargas</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <span class="emoji">🛺</span>
+    <h1>Zaachila <span>Moto</span></h1>
+    <p>La app que conecta pasajeros con mototaxistas en Villa de Zaachila. Seguro, rápido y desde tu domicilio.</p>
+    <div class="hero-buttons">
+        <a href="#descargas" class="btn-hero">📲 Descargar App</a>
+        <a href="#beneficios" class="btn-hero outline">✨ Conoce más</a>
+    </div>
+</section>
+
+<section id="problema">
+    <h2>🚧 La <span>Problemática</span></h2>
+    <p class="subtitle">Situaciones que enfrentan los habitantes de Villa de Zaachila diariamente</p>
+    <div class="problem-grid">
+        <div class="problem-card"><div class="icon">👵</div><h3>Adultos mayores en riesgo</h3><p>Adultos mayores se exponen en calles esperando un mototaxi disponible, con riesgo de accidentes, asaltos o condiciones climáticas adversas.</p></div>
+        <div class="problem-card"><div class="icon">🎒</div><h3>Jóvenes sin transporte seguro</h3><p>Estudiantes pierden tiempo buscando transporte para sus escuelas, llegando tarde o tomando unidades inseguras.</p></div>
+        <div class="problem-card"><div class="icon">🛺</div><h3>Choferes sin clientes fijos</h3><p>Mototaxistas circulan sin rumbo gastando combustible y tiempo buscando pasajeros en las calles.</p></div>
+        <div class="problem-card"><div class="icon">⏰</div><h3>Tiempo perdido</h3><p>Familias enteras esperan en esquinas o avenidas sin saber cuándo pasará un mototaxi disponible.</p></div>
+        <div class="problem-card"><div class="icon">💰</div><h3>Tarifas inconsistentes</h3><p>No hay claridad en los precios. Cada chofer cobra diferente y el pasajero no puede comparar ni elegir.</p></div>
+        <div class="problem-card"><div class="icon">🔒</div><h3>Inseguridad</h3><p>Tomar un mototaxi en la calle no ofrece garantía de seguridad ni registro del viaje realizado.</p></div>
+    </div>
+</section>
+
+<section id="solucion">
+    <h2>💡 Nuestra <span>Solución</span></h2>
+    <p class="subtitle">Zaachila Moto resuelve estos problemas con tecnología simple y accesible</p>
+    <div class="solution-cards">
+        <div class="solution-card"><div class="icon">📱</div><h3>App para pasajeros</h3><p>Solicita tu mototaxi desde casa, el trabajo o donde estés. Sin salir a la calle, sin esperar, sin riesgo.</p></div>
+        <div class="solution-card"><div class="icon">🛺</div><h3>App para choferes</h3><p>Recibe solicitudes de clientes cercanos. Lleva registro de tus ganancias diarias, semanales y mensuales.</p></div>
+        <div class="solution-card"><div class="icon">👨‍🦳</div><h3>Adultos mayores protegidos</h3><p>Desde la app solicitan el servicio sin salir de casa. El mototaxi llega a su domicilio.</p></div>
+        <div class="solution-card"><div class="icon">🎓</div><h3>Jóvenes organizados</h3><p>Planean su salida a la escuela con anticipación. Ya no llegan tarde ni se preocupan.</p></div>
+        <div class="solution-card"><div class="icon">📊</div><h3>Registro de ganancias</h3><p>Los choferes ven sus ingresos en tiempo real. Control total de su negocio.</p></div>
+        <div class="solution-card"><div class="icon">⭐</div><h3>Calificaciones y reputación</h3><p>Los pasajeros califican a los choferes. Servicio de calidad garantizado.</p></div>
+    </div>
+</section>
+
+<section id="beneficios">
+    <h2>🎯 <span>Beneficios</span> para todos</h2>
+    <p class="subtitle">Zaachila Moto beneficia tanto a pasajeros como a choferes</p>
+    <h3 style="text-align:center;color:var(--acc);margin-bottom:1.5rem">👤 Para Pasajeros</h3>
+    <div class="benefits-grid">
+        <div class="benefit-card"><div class="icon">🏠</div><h3>Solicitar desde casa</h3><p>No necesitas salir a la calle.</p></div>
+        <div class="benefit-card"><div class="icon">💰</div><h3>Tarifa clara</h3><p>El chofer propone y tú decides.</p></div>
+        <div class="benefit-card"><div class="icon">⭐</div><h3>Calificar servicio</h3><p>Evalúa a tu chofer.</p></div>
+        <div class="benefit-card"><div class="icon">🗺️</div><h3>Ver cercanos</h3><p>Mapa en tiempo real.</p></div>
+        <div class="benefit-card"><div class="icon">💬</div><h3>Chat directo</h3><p>Comunicación sin revelar número.</p></div>
+        <div class="benefit-card"><div class="icon">🔒</div><h3>Viaje seguro</h3><p>Registro de cada viaje.</p></div>
+    </div>
+    <h3 style="text-align:center;color:var(--green);margin:2.5rem 0 1.5rem">🛺 Para Choferes</h3>
+    <div class="benefits-grid">
+        <div class="benefit-card"><div class="icon">📱</div><h3>Clientes seguros</h3><p>Sin buscar pasajeros.</p></div>
+        <div class="benefit-card"><div class="icon">📊</div><h3>Registro de ganancias</h3><p>Ingresos a la vista.</p></div>
+        <div class="benefit-card"><div class="icon">⭐</div><h3>Reputación</h3><p>Buenas calificaciones = más clientes.</p></div>
+        <div class="benefit-card"><div class="icon">💬</div><h3>Chat con cliente</h3><p>Aclara dudas antes.</p></div>
+        <div class="benefit-card"><div class="icon">📦</div><h3>Reportar objetos</h3><p>Con foto incluida.</p></div>
+        <div class="benefit-card"><div class="icon">🟢</div><h3>Disponible tú decides</h3><p>Actívate o desactívate.</p></div>
+    </div>
+</section>
+
+<section class="download-section" id="descargas">
+    <h2>📲 <span>Descarga</span> la App</h2>
+    <p class="subtitle">Abre los enlaces desde tu celular para instalar</p>
+    <div class="download-grid">
+        <div class="download-card">
+            <div class="icon">👤</div>
+            <h3>App para Pasajeros</h3>
+            <p>Solicita mototaxis desde tu domicilio</p>
+            <a href="https://spiffy-sunshine-337158.netlify.app" class="btn-hero" target="_blank">📲 Abrir App Cliente</a>
+        </div>
+        <div class="download-card">
+            <div class="icon">🛺</div>
+            <h3>App para Choferes</h3>
+            <p>Recibe solicitudes y registra tus ganancias</p>
+            <a href="https://spiffy-sunshine-337158.netlify.app" class="btn-hero" style="background:var(--green);color:#000" target="_blank">📲 Abrir App Chofer</a>
+        </div>
+    </div>
+    <p style="margin-top:2rem;font-size:.8rem;color:var(--txt3)">Abre desde Chrome en Android o Safari en iPhone. Toca "Instalar" o "Agregar a pantalla de inicio".</p>
+</section>
+
+<section id="testimonios">
+    <h2>💬 <span>Testimonios</span></h2>
+    <p class="subtitle">Lo que dicen nuestros usuarios</p>
+    <div class="testimonial-grid">
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Soy adulto mayor y esta app me cambió la vida. Ya no tengo que salir a la calle a buscar mototaxi. Lo pido desde mi casa y llega puntual."</p><div class="author">Don Francisco Mendoza</div><div class="role">Pasajero · 78 años</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Mis hijos van a la escuela seguros. Planeamos su salida y el mototaxi llega justo a tiempo. Ya no llegan tarde ni se mojan en la lluvia."</p><div class="author">Sra. María Pérez</div><div class="role">Madre de familia</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Como chofer, esta app me consigue clientes sin dar vueltas. Ahorro gasolina y sé exactamente cuánto gano cada día. Mis ganancias subieron."</p><div class="author">Carlos Chacón</div><div class="role">Mototaxista · 5 años</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Estudio en el centro y antes batallaba para encontrar mototaxi. Ahora lo pido desde mi celular y en minutos está en mi casa. ¡Súper recomendado!"</p><div class="author">Ana Reyes</div><div class="role">Estudiante universitaria</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Me gusta que puedo ver el color del mototaxi y los datos del chofer antes de que llegue. Me siento más segura al viajar."</p><div class="author">Laura García</div><div class="role">Pasajera frecuente</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"El registro de ganancias es lo mejor. Ya no anoto en libretas. La app me dice cuánto gané hoy, en la semana y en el mes. Todo organizado."</p><div class="author">José Coronel</div><div class="role">Mototaxista</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Mi mamá tiene 80 años y usa la app sin problemas. Letras grandes, fácil de entender. Ya no se expone en la calle. Como hija, estoy tranquila."</p><div class="author">Rosa Cerero</div><div class="role">Familiar de adulto mayor</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Antes gastaba mucho en gasolina buscando pasajeros. Ahora solo me muevo cuando tengo un servicio seguro. Mis ingresos son más estables."</p><div class="author">Pedro Gómez Guzmán</div><div class="role">Mototaxista</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"La uso para ir al mercado, al doctor, a visitar a mi hija. Es muy fácil. Solo pongo a dónde voy y listo. Hasta puedo chatear con el chofer."</p><div class="author">Sra. Elena Martínez</div><div class="role">Pasajera · 65 años</div></div>
+        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Mis compañeros y yo coordinamos la salida de la escuela. Pedimos 2 o 3 mototaxis y nos vamos juntos. Seguro y barato. Todos la usamos ya."</p><div class="author">Luis Jiménez</div><div class="role">Estudiante de prepa</div></div>
+    </div>
+</section>
+
+<section id="contacto" class="contact-section">
+    <h2>📞 <span>Contacto</span></h2>
+    <p class="subtitle">¿Dudas? ¿Quieres registrar tu mototaxi? ¡Contáctanos!</p>
+    <div class="contact-info">
+        <div class="contact-item"><i class="fa-solid fa-phone"></i><h4>Teléfono / WhatsApp</h4><p><a href="tel:9519231764">951 923 1764</a></p></div>
+        <div class="contact-item"><i class="fa-solid fa-envelope"></i><h4>Correo Electrónico</h4><p><a href="mailto:soportetecnico.pcfacil@gmail.com">soportetecnico.pcfacil@gmail.com</a></p></div>
+    </div>
+</section>
+
+<footer>
+    <p>🛺 Zaachila Moto &copy; 2026 | Villa de Zaachila, Oaxaca</p>
+    <p style="margin-top:.3rem">Tecnología al servicio de nuestra comunidad</p>
+</footer>
+
+</body>
+</html>
