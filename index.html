@@ -11,10 +11,9 @@
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Inter','Segoe UI',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
         
-        /* BANNER VIBRANTE */
-        .banner{background:linear-gradient(135deg,var(--green),#00E396);color:#000;text-align:center;padding:1rem;font-weight:800;font-size:1.1rem;animation:shake 0.5s infinite;position:sticky;top:0;z-index:200;cursor:pointer;text-decoration:none;display:block}
+        /* BANNER ESTÁTICO */
+        .banner{background:linear-gradient(135deg,var(--green),#00E396);color:#000;text-align:center;padding:1rem;font-weight:800;font-size:1.1rem;position:sticky;top:0;z-index:200;cursor:pointer;text-decoration:none;display:block}
         .banner:hover{background:linear-gradient(135deg,#00E396,var(--green))}
-        @keyframes shake{0%,100%{transform:translateX(0)}10%{transform:translateX(-3px)}20%{transform:translateX(3px)}30%{transform:translateX(-3px)}40%{transform:translateX(3px)}50%{transform:translateX(0)}}
         
         header{background:var(--bg2);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bd);position:sticky;top:52px;z-index:100}
         header .logo{display:flex;align-items:center;gap:.6rem;font-size:1.3rem;font-weight:800}
@@ -82,7 +81,7 @@
 </head>
 <body>
 
-<!-- BANNER VIBRANTE -->
+<!-- BANNER ESTÁTICO -->
 <a href="#contacto" class="banner">🛺 ¡ÚNETE AL PROYECTO COMPLETAMENTE GRATIS! 🛺 Haz clic aquí para contactarnos</a>
 
 <header>
